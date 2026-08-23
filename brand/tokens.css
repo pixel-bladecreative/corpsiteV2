@@ -1,0 +1,46 @@
+/* ============================================================
+   Pixel Blade — design tokens, round one
+   Derived from generated assets, not chosen off a swatch.
+   Contrast ratios measured against --pb-sumi.
+
+   ARCHITECTURE: two layers that never mix.
+     livery  — precision. Interface, type, structure, rules.
+     garden  — emotion. Light, atmosphere, photography.
+   A token doing both jobs means one of them is wrong.
+   ============================================================ */
+:root{
+  /* ---- livery ------------------------------------------------ */
+  --pb-sumi:        #0B0C0B;  /* ground. flat non-metallic black, faintly green */
+  --pb-sumi-raised: #131513;  /* the only elevation step. no shadows in this system */
+  --pb-sumi-3:      #1B1E1B;  /* inset wells, code blocks */
+
+  --pb-kin:         #C5A05F;  /* 7.99:1  AAA — the brand. matte tan gold, carries body text */
+  --pb-kin-leaf:    #E4C88C;  /* 12.07:1 — the mylar flash. hover, focus, one live edge */
+  --pb-kin-deep:    #6F582F;  /* 2.90:1  NO TEXT — hairlines, rules, borders only */
+
+  --pb-washi:       #E8E3D6;  /* 15.29:1 — body copy. warm paper white, never pure white */
+  --pb-washi-dim:   #A8A499;  /* 7.87:1  — secondary copy */
+  --pb-washi-faint: #6E6B64;  /* 3.4:1   — meta labels at >=14px only */
+
+  /* ---- garden — never on interface chrome -------------------- */
+  --pb-yoi:         #334D65;  /* 2.23:1  ATMOSPHERE ONLY — blue hour */
+  --pb-yoi-far:     #7A97B3;  /* 6.44:1  — atmospheric distance, dissolved skyline */
+  --pb-andon:       #E8A13C;  /* 8.95:1  — lantern amber. a LIGHT SOURCE, never a fill */
+  --pb-koke:        #2F3332;  /* moss. keeps the palette off the law-firm shelf */
+  --pb-ishi:        #6C5D53;  /* 3.11:1  — wet warm stone. large shapes only */
+
+  /* ---- hairlines. the default material ----------------------- */
+  --pb-hair:        rgba(197,160,95,.26);  /* gold coachline */
+  --pb-hair-soft:   rgba(232,227,214,.09); /* neutral rule */
+
+  /* ---- type (proposal, not decided) -------------------------- */
+  --pb-display: 'Bodoni Moda', ui-serif, Georgia, serif;      /* didone hairline == coachline */
+  --pb-sans:    'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif;
+  --pb-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* HARD CONSTRAINT
+   --pb-kin on --pb-washi measures 1.91:1. The gold is unreadable on any light
+   ground. This brand is dark or it is not itself. Every light-background
+   context (invoice, Word doc, client slide template) needs a declared
+   substitute — do not ship a hopeful gold. */
