@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 """Pixel dissolution — the Ninja's signature effect.
 
-His garment edge is eaten away into 16-bit blocks, and the loose squares drift
-upward and outward as if lifted on a breeze from below.
+His garment edge is eaten away into blocks that GROW as they travel — fine, almost
+sub-pixel detail right against the body, coarsening into big chunky low-res squares
+further out. It reads as resolution loss rather than as confetti: he is not shedding
+particles, he is losing definition.
+
+The loose squares drift upward and outward as if lifted on a breeze from below.
 
 Done procedurally rather than by generation: image models reliably render this
 as an adjacent object beside the figure instead of a property of the garment.
@@ -17,7 +21,9 @@ Options (fractions of image width/height unless noted):
   --x0 F                 inner edge of the dissolve band, on the figure
   --x1 F                 outer edge — full dissolution by here
   --drift F              how far loose blocks travel beyond x1
-  --block N              block size in pixels at 2K       (default 26)
+  --b0 N                 block size AT THE BODY, px at 2K (default 5)
+  --b1 N                 block size AT THE OUTER EDGE     (default 46)
+  --bk F                 how fast blocks coarsen          (default 1.6)
   --srcx F               column to copy clean background from
   --y0 F  --y1 F         vertical extent of the effect    (default whole frame)
   --gamma F              falloff curve; higher = tighter to the edge (default 2.2)
@@ -52,7 +58,10 @@ def main():
     op = out.load()
 
     edge = args.get("edge", "right")
-    B = int(args.get("block", 26)) * W // 2048 or 8
+    SC = W / 2048.0
+    b0 = max(2, int(float(args.get("b0", 5)) * SC))
+    b1 = max(b0 + 2, int(float(args.get("b1", 46)) * SC))
+    bk = frac(args, "bk", 1.6)
     x0, x1 = frac(args, "x0", .58), frac(args, "x1", .80)
     drift = frac(args, "drift", .14)
     srcx = frac(args, "srcx", .95)
@@ -69,57 +78,68 @@ def main():
         SX = int(W * (1 - srcx))
 
     step = 1 if edge == "right" else -1
-    span = abs(X1 - X0)
+    span = abs(X1 - X0) or 1
 
-    def bg_patch(bx, by):
+    def t_at(x):
+        return min(max(abs(x - X0) / span, 0.0), 1.0)
+
+    def block_at(t):
+        """Fine against the body, coarse further out. This is the whole effect."""
+        return max(2, int(b0 + (b1 - b0) * (t ** bk)))
+
+    def bg_patch(bx, by, B):
         """A clean block of background, copied from a column outside the figure."""
-        sx = min(max(SX + (bx - X0) % (B * 3), 0), W - B)
+        sx = min(max(SX + (bx - X0) % max(B * 3, 1), 0), W - B)
         return im.crop((sx, by, sx + B, by + B))
 
-    def block_colour(bx, by):
+    def block_colour(bx, by, B):
         r = g = b = n = 0
-        for y in range(by, min(by + B, H), 3):
-            for x in range(bx, min(bx + B, W), 3):
+        st = max(1, B // 6)
+        for y in range(by, min(by + B, H), st):
+            for x in range(bx, min(bx + B, W), st):
                 c = px[x, y]; r += c[0]; g += c[1]; b += c[2]; n += 1
         return (r // n, g // n, b // n) if n else (0, 0, 0)
 
-    def put(bx, by, colour):
-        for y in range(by, min(by + B, H)):
+    def put(bx, by, B, colour):
+        for y in range(max(by, 0), min(by + B, H)):
             for x in range(max(bx, 0), min(bx + B, W)):
                 op[x, y] = colour
 
+    # Walk OUTWARD in columns, letting the block size grow as we go. The column
+    # grid changes with it, which is what produces the mip-level cascade.
     loose = []
-    by = Y0
-    while by < Y1:
-        bx = X0
-        while (bx < X1 if step > 0 else bx > X1):
-            t = abs(bx - X0) / span if span else 1.0          # 0 at body, 1 at outer
+    bx = X0
+    while (bx < X1 if step > 0 else bx > X1):
+        t = t_at(bx)
+        B = block_at(t)
+        cx = bx if step > 0 else bx - B
+        by = Y0
+        while by < Y1:
             if rng.random() < t ** gamma:
-                col = block_colour(bx, by)
-                # eat the block out of the garment
-                out.paste(bg_patch(bx, by), (bx, by))
-                # some of what came loose is still in flight
+                col = block_colour(cx, by, B)
+                out.paste(bg_patch(cx, by, B), (cx, by))
                 if rng.random() < 0.55:
-                    loose.append((bx, by, col, t))
-            bx += B * step
-        by += B
+                    loose.append((cx, by, col))
+            by += B
+        bx += B * step
 
-    # loose squares drift up and outward, thinning as they go
-    for bx, by, col, t in loose:
+    # Loose squares drift up and outward. A block is redrawn at the size of WHERE
+    # IT LANDS, not where it came from — so travelling further coarsens it.
+    for bx, by, col in loose:
         d = rng.random() ** 1.6
-        nx = bx + step * int(DR * d * (0.35 + t))
+        nx = bx + step * int(DR * d * (0.35 + t_at(bx)))
         ny = by - int(H * 0.30 * d * (0.4 + rng.random()))
         if rng.random() < 0.85 - 0.55 * d:
-            put(nx, ny, col)
+            put(nx, ny, block_at(t_at(nx)), col)
 
-    # a sparse scatter further out, so the falloff has a tail
-    pal = [c for _, _, c, _ in loose] or [(200, 200, 200)]
-    for _ in range(int(len(loose) * 0.5)):
+    # A sparse tail further out — the coarsest blocks in the image.
+    pal = [c for _, _, c in loose] or [(200, 200, 200)]
+    for _ in range(int(len(loose) * 0.35)):
         d = rng.random()
         nx = X1 + step * int(DR * (0.2 + d))
         ny = rng.randint(Y0 - int(H * .18), Y1)
         if rng.random() < 0.30 * (1 - d):
-            put(nx + rng.randint(-B, B), ny, rng.choice(pal))
+            put(nx + rng.randint(-b1, b1), ny, block_at(1.0), rng.choice(pal))
 
     out.save(dst)
     print(f"pixelated -> {dst}  block={B}px  loose={len(loose)}")

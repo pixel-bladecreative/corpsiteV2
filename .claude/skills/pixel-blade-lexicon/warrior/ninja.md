@@ -40,12 +40,10 @@ unifying the technique would flatten three distinct figures into one.
 
 ## Mechanics
 
-1. **No hat. Hood up. The face is a COMPLETE VOID.** The hat belongs to the
-   other two; the hood is this figure's silhouette. Inside it there is
-   **nothing** — pure flat black. No skin, no jaw, no chin, no eyes, no features
-   of any kind. A first pass let a jaw and an eye band catch light and Spencer
-   cut it: *"no exposed skin on his face. Only suggestion, silhouette, shadow."*
-   This is absolute, and it matches the Samurai after all.
+1. **No hat. Hood up. A cyber mask, never a face.** The hat belongs to the other
+   two; the hood is this figure's silhouette. Under it, a hard-surface plated
+   mask with lit line channels or a single glowing optic — see *The face is a
+   mask* below. No skin, no hair, no human features at any angle.
 2. **Reads young.** Lighter build, casual weight, unhurried posture.
 3. **HEAVILY LAYERED, and LONG.** A first pass cropped the jacket short and that
    was wrong. The parka is oversized with the hem falling **well below the hip,
@@ -80,10 +78,25 @@ and the line is already on record — "blades are no longer steel, pixels."** Th
 ancient figures come apart in ink, the modern one in pixels. Same event, the
 medium changed with the era.
 
+### The blocks GROW as they travel
+
+This is the part that makes it read. **Fine, almost sub-pixel speckle right
+against the body; big chunky low-res squares far out.**
+
+It is not confetti coming off him — it is **resolution loss**. He is not shedding
+particles, he is losing definition, and the further a block gets the less of him
+it remembers. A uniform block size reads as an effect; a graduated one reads as
+degradation.
+
+`pixelate.py` implements it with `--b0` (block size at the body), `--b1` (at the
+outer edge) and `--bk` (how fast it coarsens). Working values: **b0 4, b1 44–52,
+bk 1.7** at 2K. A loose block is redrawn at the size of **where it lands**, not
+where it came from, so travelling further coarsens it further.
+
 ### Rules
 
-- **Large, unmistakably square blocks.** Hard right angles, flat solid colour, no
-  anti-aliasing, no rotation, no blur. A 16-bit sprite edge, not fine grain.
+- **Square blocks.** Hard right angles, flat solid colour, no anti-aliasing, no
+  rotation, no blur.
 - **The garment is genuinely eaten.** Its outline becomes a stepped staircase of
   missing bites, and square holes appear punched through the cloth a little way
   in from the edge. He is visibly incomplete on that side.
@@ -97,6 +110,18 @@ medium changed with the era.
   unbroken outline.
 - **Never** smoke, mist, ink, tendrils, embers or sparks. And never glitch art —
   no RGB splitting, scan lines, chromatic aberration, digital noise or holograms.
+
+### The face is a mask
+
+**No face, no skin, and no hair.** Inside the hood is a hard-surface angular mask
+of matte black plating covering the entire head — faceted panels, fine seam
+lines, a low sculpted brow, a flat lower jaw guard. Set into it either a few
+narrow glowing cyan line channels or **one small round glowing optic**, slightly
+off centre.
+
+Nothing hangs out of the hood. No strands, no fringe, nothing framing the mask —
+an earlier pass had cyan hair-like strands and they were cut. The head is a
+machined object, entirely covered.
 
 ### Produce it in code, not by generation
 
@@ -134,8 +159,10 @@ the same algorithm runs in canvas.
   lower) so it eats into the lighter under-layers too, and raise `--drift`.
 - `--gamma` controls how tightly the dissolution hugs the edge. 1.7–2.2 is the
   useful range; higher keeps the body more intact.
-- `--block` around 24–30px at 2K is the sweet spot. Smaller reads as noise,
-  larger as damage.
+- `--b1` around 44–52px at 2K for the coarse end. Much larger reads as damage
+  rather than degradation.
+- `--b0` at 3–5px. If the fine end is too large the gradient disappears and it
+  goes back to reading as confetti.
 
 ## Adaptive colour — he is the day/night switch## Adaptive colour — he is the day/night switch
 
