@@ -24,9 +24,15 @@ he never looks pasted into these environments.
 
 | Figure | Status |
 |---|---|
-| **Monk** — final form | Documented in `monk.md`. Three plates, all modes verified. |
-| Monk — earlier forms | Pending. Spencer: *"his final form, which you'll understand when we see the other forms."* The arc runs shadow → light: *"he's no longer hiding from the sun."* |
+| **Monk** — final form | `monk.md`. Three plates, both modes verified. Bronze family desaturated. Hands empty. |
+| **Monk** — shadow form | `monk-shadow.md`. Three plates, day mode verified. Colourless ink, always hatted, carries a blade. |
+| Monk — forms between | Pending. Two points on the arc exist; the middle does not. |
 | **Oni** — adversary | Pending. Named as an opponent the Monk fights. |
+
+**The arc, as it stands:** shadow → light. Colourless → bronze. Hatted and hidden
+→ face still lowered but unshaded. **Blade → empty hands.** That last one is the
+graduation marker, and it emerged from reading the two briefs against each other
+rather than from either one alone.
 
 ## Rules for every Warrior figure
 
@@ -51,6 +57,13 @@ the second figure lands.
 6. **Placement decides the mode, not the figure.** Feather to the destination
    ground: `feather.py --day` for paper, plain for sumi. Verify with
    `check-plate.py [--day]`.
+7. **A figure's hue states where it is on the arc.** The final form is the bronze
+   family desaturated. The shadow form carries no hue at all. Colour is earned,
+   and a new figure's palette should be a deliberate answer to "how far along is
+   this one."
+8. **`--pb-kindle` #2AD4C8 belongs to blades only.** The one colour in the system
+   that means potential rather than material. Never on a figure, never in type,
+   never anywhere but behind a weapon.
 
 ## Adding a figure
 

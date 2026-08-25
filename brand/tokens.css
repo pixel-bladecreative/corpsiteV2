@@ -94,6 +94,23 @@
   --pb-rust:   #7B4933;  /* hue 18 — deep ridge */
   --pb-oxide:  #5E321F;  /* hue 18 — deepest, nearly earth */
 
+  /* ---- KINDLE — the one colour that belongs to nobody -------------
+     #2AD4C8, hue 175, sat ~78, val ~83. The brightest, most saturated
+     value anywhere in this system, and it appears in EXACTLY one place:
+     behind the blade of the Monk's shadow form.
+
+     It is deliberately OUTSIDE both gamuts. Petrol is hue 197; this sits
+     22 degrees warmer and far hotter. It is not a material and not a
+     mode — it is POTENTIAL. What the student might become once he has
+     finished learning.
+
+     RULES, and they are absolute:
+       - Image gamut only. 1.69:1 on paper. NEVER type, tile or border.
+       - Only ever behind a blade. Nothing else in the system may use it.
+       - It never touches the figure who carries it.
+     If kindle appears anywhere but a weapon, it is a bug. ---------- */
+  --pb-kindle: #2AD4C8;
+
   /* ---- DAY MODE — the light ground -------------------------------
      Not a new palette. The SAME materials on a paper ground, with the
      roles held constant and the values swapped:

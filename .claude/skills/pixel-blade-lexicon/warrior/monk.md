@@ -8,8 +8,12 @@ Spencer: *"He's no longer hiding from the sun. He's watercolor and mist and
 motion. This figure should be able to look like he's in motion simply standing in
 any of our environments, or fighting an Oni."*
 
-This is the **evolution** of the character — his final form. Earlier forms are
-pending, and the arc runs shadow → light.
+This is the **evolution** of the character — his final form. See
+`monk-shadow.md` for the earlier form; the arc runs shadow → light, colourless →
+bronze, and **blade → empty hands**.
+
+His empty hands are not an absence. They are the graduation: the student needs a
+weapon to show what he might be, and the master does not.
 
 ## Two findings that decide how he integrates
 
