@@ -151,3 +151,148 @@ for nm, base in (("01-cut-enso", MARKS["01-cut-enso"]),
     cairosvg.svg2png(bytestring=d.encode(), write_to=f"{OUT}/lockup-{nm}-day.png",
                      output_width=1520, background_color="#F4F5F2")
     print(f"lockup-{nm}: night + day")
+
+
+# ══ CRANE × ENSO ══════════════════════════════════════════════════════════
+# The crane returns — but it does not sit politely inside the ring. It crosses
+# in front of it, and where it crosses, the ring is not there. The occlusion IS
+# the interaction: the bird is defined as much by what it interrupts as by what
+# it draws, which is what lets it stay this reduced.
+#
+# Four parts, one axis. One wing, not two — two wings read as a butterfly. The
+# neck is a stroked line with a kink in it, because a taper reads as a spear
+# and a bend reads as a head. Straight edges only: paper folds, it does not
+# curve. Drawn facing left in the 200 box, then mirrored and banked by CRANE_TF.
+CRANE_FILL = {
+    "wing": [(80, 128), (130, 2), (166, 48), (122, 118)],   # the plane that carries it
+    "tail": [(162, 80), (116, 108), (112, 130)],            # short blunt wedge
+    "keel": [(92, 128), (116, 122), (104, 152)],            # the body, hanging
+}
+CRANE_LINE = {"neck": ([(104, 122), (26, 96), (2, 66)], 7.5)}
+
+# The crease. One line, wing root to wing tip, drawn in the PAGE GROUND so it
+# cuts the plane in two. A flat shape with a fold in it reads as paper; without
+# it the wing reads as a feather. This one line is the whole origami cue.
+CRANE_CREASE = [(100, 124), (131, 10)]
+
+# Banked, mirrored, and sized so the wing tip and the head break the ring while
+# the lower-left arc stays whole. The bank is what keeps a circular container
+# from going heraldic; the whole arc is what keeps it a seal.
+CRANE_TF = (f"translate({2 * C},0) scale(-1,1) rotate(-10 {C} {C}) "
+            f"translate({C},{C}) scale(0.86) translate({-C},{-C})")
+
+GROUND = "#0A0A0B"
+CUT_LL = 145                 # the crane version cuts its ring in the quiet quadrant
+
+
+def poly(pts, close=True):
+    return "M" + " L".join(f"{x} {y}" for x, y in pts) + (" Z" if close else "")
+
+
+def crane_paths(fill="#C6A664", w=7, only=None, crease=True):
+    """The bird. fill=None draws it in outline instead of solid."""
+    fills = {k: v for k, v in CRANE_FILL.items() if not only or k in only}
+    lines = {k: v for k, v in CRANE_LINE.items() if not only or k in only}
+    out = ""
+    for pts in fills.values():
+        out += (f'<path d="{poly(pts)}" fill="{fill or "none"}" '
+                f'stroke="{fill or "#C6A664"}" stroke-width="{1.2 if fill else w * .62}" '
+                f'stroke-linejoin="round"/>')
+    for pts, lw in lines.values():
+        out += (f'<path d="{poly(pts, False)}" fill="none" stroke="#C6A664" '
+                f'stroke-width="{lw if fill else lw * .72}"/>')
+    if crease and "wing" in fills and fill:
+        out += (f'<path d="{poly(CRANE_CREASE, False)}" fill="none" '
+                f'stroke="{GROUND}" stroke-width="{w * 0.48}"/>')
+    return f'<g transform="{CRANE_TF}">{out}</g>'
+
+
+def crane_mask(mid, grow=11, only=None):
+    """A dilated crane silhouette, used to knock the ring out behind it.
+
+    The dilation is clearance: the ring stops short of the bird rather than
+    touching it, so the two never fuse into one blob as the mark scales down.
+    """
+    body = "".join(f'<path d="{poly(p)}" fill="#000" stroke="#000" '
+                   f'stroke-width="{grow}" stroke-linejoin="round"/>'
+                   for k, p in CRANE_FILL.items() if not only or k in only)
+    body += "".join(f'<path d="{poly(p, False)}" fill="none" stroke="#000" '
+                    f'stroke-width="{lw + grow}" stroke-linejoin="round" '
+                    f'stroke-linecap="round"/>'
+                    for k, (p, lw) in CRANE_LINE.items() if not only or k in only)
+    return (f'<mask id="{mid}" maskUnits="userSpaceOnUse" x="0" y="0" '
+            f'width="{S}" height="{S}"><rect width="{S}" height="{S}" fill="#fff"/>'
+            f'<g transform="{CRANE_TF}">{body}</g></mask>')
+
+
+def enso_crane(mid, solid=True, w=7, r=74, grow=11, slip=0, gap=0,
+               cut_deg=CUT_LL, only=None):
+    """Ring behind, crane in front, ring absent where the crane crosses it."""
+    if gap:
+        ring = arc(C, C, r, cut_deg + gap / 2, cut_deg - gap / 2 + 360, w)
+        if slip:
+            dx = slip * math.cos(math.radians(cut_deg + 90))
+            dy = slip * math.sin(math.radians(cut_deg + 90))
+            ring += arc(C + dx, C + dy, r, cut_deg - gap / 2, cut_deg + gap / 2, w)
+    else:
+        ring = f'<circle cx="{C}" cy="{C}" r="{r}" stroke-width="{w}"/>'
+    body = (f'<g mask="url(#{mid})">{ring}</g>'
+            + crane_paths(fill="#C6A664" if solid else None, w=w, only=only))
+    return svg(body, extra=crane_mask(mid, grow, only))
+
+
+def enso_crane_pixel(mid="kp", w=7, r=74, grow=11, decay=72, n=11,
+                     cut_deg=CUT_LL, gap=14):
+    """Crane occluding the ring, and the ring losing resolution as it leaves.
+
+    The end state of the animation 02 describes: the seal comes apart into the
+    medium it cuts with, and the bird is what stays.
+    """
+    a_clean, a_decay = cut_deg + gap / 2, cut_deg - gap / 2 + 360
+    out = arc(C, C, r, a_clean, a_decay - decay, w)
+    for i in range(n):
+        t = i / (n - 1)
+        a = a_decay - decay * (1 - t) + (t ** 2) * 7
+        size = w * (0.60 + 1.55 * t ** 1.9)
+        x, y = pt(C, C, r, a)
+        out += sq(x - size / 2, y - size / 2, size)
+    for k, (da, dr) in enumerate([(13, 1.05), (24, 1.12), (37, 1.21)]):
+        size = w * (2.0 + 0.85 * k)
+        x, y = pt(C, C, r * dr, a_decay + da)
+        out += sq(x - size / 2, y - size / 2, size)
+    return svg(f'<g mask="url(#{mid})">{out}</g>' + crane_paths(),
+               extra=crane_mask(mid, grow))
+
+
+CRANE_MARKS = {
+    "05-enso-crane":       enso_crane("ka"),
+    "06-enso-crane-cut":   enso_crane("kb", slip=11.0, gap=9),
+    "07-enso-crane-line":  enso_crane("kc", solid=False),
+    "08-enso-crane-wing":  enso_crane("kd", only=("wing", "neck")),
+    "09-enso-crane-pixel": enso_crane_pixel(),
+}
+MARKS.update(CRANE_MARKS)
+
+for name in CRANE_MARKS:
+    s = MARKS[name]
+    open(f"{OUT}/{name}.svg", "w").write(s)
+    for px, tag in ((800, ""), (64, "-64"), (32, "-32"), (16, "-16")):
+        cairosvg.svg2png(bytestring=s.encode(), write_to=f"{OUT}/{name}{tag}.png",
+                         output_width=px, output_height=px, background_color=GROUND)
+    # day mode: oxide on paper — the crease follows the ground, not the ink
+    day = s.replace("#C6A664", "#5E321F").replace(GROUND, "#F4F5F2")
+    open(f"{OUT}/{name}-day.svg", "w").write(day)
+    cairosvg.svg2png(bytestring=day.encode(), write_to=f"{OUT}/{name}-day.png",
+                     output_width=800, output_height=800, background_color="#F4F5F2")
+    print(f"{name}: built")
+
+for nm in ("05-enso-crane", "06-enso-crane-cut"):
+    n = lockup(MARKS[nm])
+    open(f"{OUT}/lockup-{nm}.svg", "w").write(n)
+    cairosvg.svg2png(bytestring=n.encode(), write_to=f"{OUT}/lockup-{nm}.png",
+                     output_width=1520, background_color=GROUND)
+    d = lockup(MARKS[nm], ink="#5E321F", word="#13252C").replace(GROUND, "#F4F5F2")
+    open(f"{OUT}/lockup-{nm}-day.svg", "w").write(d)
+    cairosvg.svg2png(bytestring=d.encode(), write_to=f"{OUT}/lockup-{nm}-day.png",
+                     output_width=1520, background_color="#F4F5F2")
+    print(f"lockup-{nm}: night + day")
