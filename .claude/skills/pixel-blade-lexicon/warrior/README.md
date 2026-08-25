@@ -55,8 +55,13 @@ the second figure lands.
 1. **The figure is sharp. The motion is around him.** Never motion-blurred. The
    movement lives in ink ribbons, dissolving particles and streaming cloth. This
    is what lets a figure read as moving while standing still.
-2. **He dissolves at the edges.** Hems, sleeves, the away side — breaking into
-   drifting particles and mist. Never fully contained by his own outline.
+2. **The dissolution is SUBTRACTIVE, not emissive.** Parts of a figure are
+   *missing* and shadow is what is there instead — never a whole figure with an
+   effect added on top. The failure mode is smoke rising from one point, which
+   reads as a special effect; the correct read is a region of the body that has
+   stopped existing. Scale varies by figure: the Monk loses hems and edges, the
+   Samurai everything below the ribs, the Night warrior half a torso or a whole
+   arm.
 3. **The face is at rest.** Eyes down or closed, no aggression, no strain, no
    shout. The violence is in the body. This is the warrior-in-a-garden idea
    compressed into one figure, and it is the rule most likely to be broken by a

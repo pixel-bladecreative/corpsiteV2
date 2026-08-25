@@ -41,15 +41,20 @@ unifying the technique would flatten three distinct figures into one.
 
 ## Mechanics
 
-1. **No hat. Hood up.** The hat belongs to the other two; this is the
-   distinguishing silhouette. Face in deep shadow beneath the hood — the jaw may
-   catch light, the eyes may read as a shadowed band. Not the Samurai's total
-   blackout.
+1. **No hat. Hood up. The face is a COMPLETE VOID.** The hat belongs to the
+   other two; the hood is this figure's silhouette. Inside it there is
+   **nothing** — pure flat black. No skin, no jaw, no chin, no eyes, no features
+   of any kind. A first pass let a jaw and an eye band catch light and Spencer
+   cut it: *"no exposed skin on his face. Only suggestion, silhouette, shadow."*
+   This is absolute, and it matches the Samurai after all.
 2. **Reads young.** Lighter build, casual weight, unhurried posture.
-3. **Modified streetwear.** Oversized hooded jacket, loose cargo trousers,
-   sealed seams, magnetic closures, small hard-shell panels at shoulder and
-   forearm. Beneath it, matte black articulated plating at ribs, hip, thigh —
-   Aramaki hard surface.
+3. **HEAVILY LAYERED, and LONG.** A first pass cropped the jacket short and that
+   was wrong. The parka is oversized with the hem falling **well below the hip,
+   toward the knee**, worn open over a second offset mid-layer jacket, over a
+   high-collared under-layer, over stacked cargo trousers. **Each hem visible at
+   a different length.** Sealed seams, magnetic closures, webbing straps, small
+   hard-shell panels at shoulder and forearm, over matte black articulated
+   plating. Nothing cropped, ever — the bulk is the silhouette.
 4. **Cybernetic appendage.** One matte black prosthetic arm or hand with
    articulated joints and fine seam lines. He carries **no drawn weapon** in any
    plate — his hands are the weapon. Worth keeping.
@@ -57,9 +62,15 @@ unifying the technique would flatten three distinct figures into one.
 6. **Kindle channels.** Narrow cyan-turquoise light along plating, spine and
    knuckles. **Hairline only** — measured at 0.4–1.0% of frame coverage. Never a
    glow-suit.
-7. **The common thread.** Hem, one sleeve, lower legs stop being solid and become
-   wet black ink and smoky shadow — tendrils, wisps, drifting droplets. Present
-   in every plate.
+7. **The common thread — SUBTRACTIVE, not emissive.** Whole **regions** of him
+   are simply gone and replaced by churning wet black ink: half a torso, an
+   entire arm, the whole lower body. The boundary runs raggedly through him.
+
+   A first pass had smoke rising from a single point on his shoulder and Spencer
+   named it: *"too on the nose. Whole parts of him need to look like they are
+   dissolving into the shadows from which he works."* The failure mode is drawing
+   him whole and adding an effect. He is not emitting shadow — **he is missing**,
+   and shadow is what is there instead.
 8. **Future Tokyo, desaturated.** Signage is dim and near-grey, never a neon
    blaze. No magenta, no hot pink, no orange neon. The city stays dark so he can
    be the only lit thing.
@@ -105,6 +116,10 @@ bright hue halves it.
 
 **Do not draw a weapon.** He has not needed one in three plates and it is
 stronger that way.
+
+**Do not crop the jacket.** The layering and the length are the silhouette.
+
+**Do not let any skin show above the neck.** Not a jaw, not a chin, not an eye.
 
 **Do not show the aftermath.** No bodies, no blood, no wreckage. Emptiness and
 dust carry it; anything explicit makes him ordinary.
