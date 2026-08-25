@@ -67,60 +67,77 @@ unifying the technique would flatten three distinct figures into one.
    blaze. No magenta, no hot pink, no orange neon. The city stays dark so he can
    be the only lit thing.
 
-## The effect — how the dissolution actually works
+## The effect — HE COMES APART AS PIXELS
 
-Three passes, three failures, and the third correction is the one that names the
-mechanic.
+**The Ninja does not dissolve into ink. Ink belongs to the Monk and the Samurai.**
 
-| Pass | What it did | Why it failed |
-|---|---|---|
-| 1 | Smoke rising from one point on his shoulder | *"Too on the nose."* An effect stuck onto a whole figure. |
-| 2 | Large ink masses replacing half his torso | Still emitting. The ink had **visible ends floating in air**. |
-| 3 | **Partially undrawn** | Correct. |
+His edges come apart as **16-bit pixels** — large flat opaque squares of the
+cloth they left, drifting upward and outward as if lifted on a breeze rising from
+below. Only ever on **one side**: the side nearest a wall or a shadow.
 
-Spencer's rule, and it is the whole thing:
+That is not a variation for its own sake. **The company is called Pixel Blade,
+and the line is already on record — "blades are no longer steel, pixels."** The
+ancient figures come apart in ink, the modern one in pixels. Same event, the
+medium changed with the era.
 
-> *"We should never see the end of the inky sections. They should start in him,
-> then blend into a shadow, or the edge of a frame. He's **becoming** solid, or
-> **becoming** shadow. Not emitting something."*
->
-> *"Don't think 'tendrils'. Think 'dissolving'. Think 'emerging'."*
+### Rules
 
-**Tendrils have ends. Dissolving has no far edge.**
+- **Large, unmistakably square blocks.** Hard right angles, flat solid colour, no
+  anti-aliasing, no rotation, no blur. A 16-bit sprite edge, not fine grain.
+- **The garment is genuinely eaten.** Its outline becomes a stepped staircase of
+  missing bites, and square holes appear punched through the cloth a little way
+  in from the edge. He is visibly incomplete on that side.
+- **No gap.** The loose squares begin exactly where the cloth ends.
+- **They are pieces of his coat.** Each square carries the colour it came from —
+  bone, sand, grey, charcoal, black. They do not glow. At most one or two in a
+  hundred carry the cyan of the plating beneath.
+- **Upward and outward**, densest at the edge, thinning as they rise, the
+  furthest few sparse and scattered. Many are lost in the shadow they drift into.
+- **One side only.** The other side is completely intact — smooth cloth, clean
+  unbroken outline.
+- **Never** smoke, mist, ink, tendrils, embers or sparks. And never glitch art —
+  no RGB splitting, scan lines, chromatic aberration, digital noise or holograms.
 
-### How to actually produce it
+### Produce it in code, not by generation
 
-The instruction that works is not "dissolve him." It is: **the figure is only
-partially drawn.**
+`brand/pixelate.py`.
 
-1. **Compose the shadow first.** The frame must contain a large unbroken field of
-   near-black that runs off an edge — an alley mouth, a floor, a wall. Without
-   somewhere to dissolve *into*, the effect is impossible and the generator will
-   default to floating ink.
-2. **Name what is drawn.** "His left side from shoulder to hip, crisp and solid."
-3. **Name what is NOT drawn.** "His right side and both legs — **do not draw
-   them**. Where they would be, there is only the black field. No silhouette, no
-   outline, no contour, no hint of a limb."
-4. **Make the transition wide.** A third of the body, values stepping down, folds
-   and panel lines dropping out as they go. Never a hard line.
-5. **Ban the objects explicitly** — tendrils, wisps, plumes, smoke, splatter,
-   ribbons, tips, ends. Every single time.
+Four generation attempts put the pixels **beside** the figure — a field on the
+wall next to an intact character — rather than eating the garment. Image models
+consistently read this as an adjacent object.
 
-The black of the figure and the black of the field are **the same black**, one
-continuous area. There is no edge because there is no figure there to have one.
+The pipeline that works:
 
-### A trap worth knowing
+1. Generate a **clean, fully intact** figure. No dissolution requested at all —
+   models render that reliably.
+2. Run `pixelate.py` over the dissolving side.
 
-Asking for a *ragged* or *irregular* boundary reliably reintroduces wisps — the
-generator's default reading of "irregular dissolve" is tendrils. A test plate
-that got the torn diagonal boundary right smuggled floating smoke curls back into
-the transition zone.
+```
+pixelate.py <in> <out> --edge right --x0 0.54 --x1 0.82 \
+            --drift 0.17 --block 30 --srcx 0.93 --gamma 1.9 --seed 5
+```
 
-**Always pair any raggedness instruction with the explicit ban.** If forced to
-choose, take the cleaner boundary — no floating ends is the harder and more
-important rule.
+The tool blocks the band, removes blocks with probability rising toward the outer
+edge, fills the holes with clean background copied from a column outside the
+figure, then redraws a fraction of what came loose at a rising offset with
+density falling off.
 
-## Adaptive colour — he is the day/night switch
+This is better than a lucky generation for three reasons: the edge is genuinely
+chewed rather than suggested; every block is provably a piece of the cloth it
+left; and it is **deterministic and repeatable** — same seed, same result, which
+is what a design system needs. It is also the basis for the site animation, since
+the same algorithm runs in canvas.
+
+### Tuning notes
+
+- Dark coat against a dark wall reads faintly. Widen the band inward (`--x0`
+  lower) so it eats into the lighter under-layers too, and raise `--drift`.
+- `--gamma` controls how tightly the dissolution hugs the edge. 1.7–2.2 is the
+  useful range; higher keeps the body more intact.
+- `--block` around 24–30px at 2K is the sweet spot. Smaller reads as noise,
+  larger as damage.
+
+## Adaptive colour — he is the day/night switch## Adaptive colour — he is the day/night switch
 
 Spencer: *"Light colors to blend walking through a crowd that can change to dark
 to suit his needs."*

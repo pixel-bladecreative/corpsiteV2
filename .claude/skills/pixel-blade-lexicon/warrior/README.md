@@ -55,27 +55,29 @@ the second figure lands.
 1. **The figure is sharp. The motion is around him.** Never motion-blurred. The
    movement lives in ink ribbons, dissolving particles and streaming cloth. This
    is what lets a figure read as moving while standing still.
-2. **The dissolution has NO FAR EDGE. Ever.** This is the single most important
-   rule in the namespace and it took three passes to state correctly.
+2. **Every figure comes apart at the edges — but the MEDIUM is per-figure.**
 
-   The ink must **start in the figure and run into an existing shadow or off the
-   frame**. It may never terminate in mid-air. **Tendrils have ends; dissolving
-   does not.** A figure is not emitting shadow — it is *becoming* shadow, or
-   *emerging* from it.
+   | Figure | Comes apart as |
+   |---|---|
+   | Monk | ink, dust and pale mist |
+   | Samurai | wet sumi ink |
+   | Ninja | **16-bit pixels** |
 
-   In practice the figure is **partially undrawn**: name what is drawn, name what
-   is not, and let a large unbroken field of near-black occupy the difference. The
-   figure's black and the field's black are the same black, so there is no edge
-   because there is no figure there to have one.
+   The ancient figures dissolve in ink; the modern one in pixels. *"Blades are no
+   longer steel. Pixels."* Same event, medium changed with the era — and it is the
+   company's own name, so it should not have taken four rounds to find.
 
-   **Compose the shadow before the figure.** Without somewhere to dissolve into,
-   the effect cannot exist.
+   **Mist and tendrils are fine.** What is not fine is either of them reading as
+   an **appendage** — a limb-like plume attached to the body, or a field of effect
+   sitting beside an otherwise intact figure. The dissolution is a property of the
+   garment, not an object next to it.
 
-   Scale varies — the Monk loses hems and edges, the Samurai everything below the
-   ribs, the Ninja an entire side — but the rule does not.
+   Where it helps, run the loose material into an existing shadow or off the frame
+   rather than letting it resolve in open air. Compose somewhere for it to go.
 
-   *Trap:* asking for a "ragged" boundary reliably reintroduces wisps. Always
-   pair it with an explicit ban on tendrils, tips and ends.
+   **The Ninja's pixels are made in code** — `brand/pixelate.py`. Generation puts
+   them beside him every time.
+
 3. **The face is at rest.** Eyes down or closed, no aggression, no strain, no
    shout. The violence is in the body. This is the warrior-in-a-garden idea
    compressed into one figure, and it is the rule most likely to be broken by a

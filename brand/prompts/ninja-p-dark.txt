@@ -1,0 +1,23 @@
+Anime key art, Shinji Aramaki style — hard-surface design, crisp panel lines, cel-shaded flat colour with sharp specular edges.
+
+SETTING: a narrow rain-wet future Tokyo alley at night. The figure stands close to the alley wall on his right; that whole side of the frame is a deep unbroken field of near-black running off the right and bottom edges. One cold light rakes from the upper left. Distant signage dim and near-grey. Roughly seventy-five percent of the frame carries no detail.
+
+THE FIGURE: a young cyber-ninja standing still, heavily layered — a LONG oversized black hooded parka with the hem well below the hip toward the knee, worn open over an offset charcoal mid-layer, a high-collared under-layer, stacked cargo trousers, webbing straps and hard-shell panels over matte black articulated plating. One matte black cybernetic arm with narrow cyan-turquoise hairline channels. THE FACE IS A COMPLETE VOID — flat black inside the hood, no features.
+
+THE EFFECT — HIS COAT IS BEING EATEN AWAY INTO PIXELS. This happens ON THE GARMENT ITSELF, not in the air beside him:
+
+The right edge of his parka IS NOT A SMOOTH OUTLINE. It has been CHEWED into a jagged STAIRCASE of missing square bites — the cloth is visibly narrower on that side than it should be, with square notches cut into the sleeve, the shoulder, the lapel and the hem. You can see holes: single square gaps punched through the cloth a little way in from the edge, showing the background through them. The garment is visibly incomplete.
+
+The blocks are LARGE and unmistakably SQUARE, like a 16-bit video game sprite — hard right angles, flat solid colour, no anti-aliasing.
+
+Immediately outside that chewed edge, the loose squares CONTINUE — and there must be NO GAP between the cloth and them. They begin exactly where the cloth ends, as though they have only just come free of it. From there they DRIFT UPWARD AND OUTWARD, as if lifted on a breeze rising from below: dense and tightly packed right against the coat, spreading and thinning as they rise, the furthest few sparse and scattered.
+
+EVERY LOOSE SQUARE IS THE COLOUR OF THE CLOTH IT CAME FROM — bone white, pale sand, grey, charcoal, black. They are pieces of his coat. They are NOT cyan, NOT blue, NOT the colour of the wall, and they do NOT glow. Only one or two of the hundreds may carry the cyan of the plating beneath.
+
+His LEFT side is completely intact — smooth cloth, clean unbroken anime outline.
+
+FORBIDDEN: smoke, mist, ink, tendrils, wisps, ribbons, dust, embers, sparks. FORBIDDEN: glitch art, RGB channel splitting, scan lines, chromatic aberration, digital noise, static, holograms, glowing particles. Plain flat opaque squares of cloth colour.
+
+Color: pure black, charcoal, wet grey, narrow cyan-turquoise. No magenta, no orange neon.
+Style: cel-shaded anime. NOT photorealistic.
+No text, no readable letters, no watermark, NO FACE, no visible skin.
