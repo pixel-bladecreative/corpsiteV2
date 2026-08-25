@@ -45,6 +45,21 @@ plus the brand-native plate *are* the record.
 |---|---|
 | `surreal` | Familiar objects of intimate scale, rendered monumentally, suspended in void with no explanation of support. Not fantasy — dislocation. |
 | `scale` | A tiny human figure as the ruler that proves everything else is impossible. 1–3% of frame height, never more. |
+| `dark elegance` | The *treatment*. Near-black ground, one accent used once, hierarchy by tracking and opacity rather than weight, hairlines instead of boxes. Elegance as subtraction. |
+| `night scene` | The *photographic condition*. One warm source, hard warm/cool split, fast falloff, 70–85% of frame with no detail. |
+| `brooding` | The *emotional posture*. One figure turned away at 15–25% of frame, no horizon, no resolution, near-monochrome. Patient, not tragic. |
+
+`dark elegance` / `night scene` / `brooding` describe treatment, photography and
+mood respectively. They usually co-occur but are separable — `auraplan`'s lit
+office is a night scene and is not brooding at all.
+
+## Layout patterns
+
+Spencer's references also carry reusable structure. That half lives in
+`patterns/layout-patterns.md` — `tracked-stack`, `accent-word`,
+`gold-ghost-pair`, `corner-brackets`, `instrument-marks`, `feature-strip`,
+`numbered-grid`, `data-rows`, `dark-half-type`. Read it for any layout or
+component work, not just when a mood word is used.
 
 ## Standing constraints
 
