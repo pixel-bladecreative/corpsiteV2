@@ -24,15 +24,25 @@ he never looks pasted into these environments.
 
 | Figure | Status |
 |---|---|
-| **Monk** — final form | `monk.md`. Three plates, both modes verified. Bronze family desaturated. Hands empty. |
-| **Monk** — shadow form | `monk-shadow.md`. Three plates, day mode verified. Colourless ink, always hatted, carries a blade. |
-| Monk — forms between | Pending. Two points on the arc exist; the middle does not. |
+| **Monk** — final form | `monk.md`. Three plates, both modes verified. Hue 28–34 at saturation 5–45. Hands empty. |
+| **Samurai** — the Day warrior | `samurai.md`. Four plates, day mode verified. Hue 24–29 at saturation 63–79. Always hatted, face always shadowed, carries a blade. |
 | **Oni** — adversary | Pending. Named as an opponent the Monk fights. |
 
-**The arc, as it stands:** shadow → light. Colourless → bronze. Hatted and hidden
-→ face still lowered but unshaded. **Blade → empty hands.** That last one is the
-graduation marker, and it emerged from reading the two briefs against each other
-rather than from either one alone.
+**Saturation is the axis.** Both figures sit in the same hue family — 24–34,
+which is bronze's family — and differ only in volume:
+
+    Samurai  sat 63–79   louder than the brand
+    bronze   sat 59      the brand itself
+    Monk     sat  5–45   quieter than the brand
+
+The student is over-saturated; he is trying too hard. The master has worn it
+below the brand's own level. **Mastery is turning it down** — the same argument
+the agency makes about advertising.
+
+Whether the Samurai is an earlier form of the Monk or a separate figure on a
+parallel path is **Spencer's call.** The briefs rhyme (hiding from the sun vs. no
+longer hiding, learning to dance vs. dance as movement, blade vs. empty hands) but
+that is an observation, not a decision.
 
 ## Rules for every Warrior figure
 
@@ -57,11 +67,13 @@ the second figure lands.
 6. **Placement decides the mode, not the figure.** Feather to the destination
    ground: `feather.py --day` for paper, plain for sumi. Verify with
    `check-plate.py [--day]`.
-7. **A figure's hue states where it is on the arc.** The final form is the bronze
-   family desaturated. The shadow form carries no hue at all. Colour is earned,
-   and a new figure's palette should be a deliberate answer to "how far along is
-   this one."
-8. **`--pb-kindle` #2AD4C8 belongs to blades only.** The one colour in the system
+7. **A figure's SATURATION states where it is.** Every figure sits in bronze's
+   hue family; how loudly they wear it is the characterisation. A new figure's
+   saturation should be a deliberate answer to "how far along is this one."
+8. **Where a figure is solid, it is a photograph.** Total material fidelity —
+   real weave, real fraying, real skin. Any stylisation is confined to what is
+   dissolving. If everything is stylised, nothing reads as lost.
+9. **`--pb-kindle` #2AD4C8 belongs to blades only.** The one colour in the system
    that means potential rather than material. Never on a figure, never in type,
    never anywhere but behind a weapon.
 

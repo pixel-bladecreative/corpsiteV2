@@ -79,8 +79,8 @@ component work, not just when a mood word is used.
 
 Figures live in `warrior/`, **not** in the terms above, and are **loaded only
 when a figure is actually needed** — never for ordinary design or layout work.
-Read `warrior/README.md` at that point. Currently: the Monk in two forms — final
-(`monk.md`) and shadow (`monk-shadow.md`). Pending: the forms between, and the Oni.
+Read `warrior/README.md` at that point. Currently: the Monk (`monk.md`) and the
+Samurai (`samurai.md`). Pending: the Oni.
 
 ## Standing constraints
 

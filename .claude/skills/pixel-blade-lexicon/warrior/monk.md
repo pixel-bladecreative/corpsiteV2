@@ -8,12 +8,14 @@ Spencer: *"He's no longer hiding from the sun. He's watercolor and mist and
 motion. This figure should be able to look like he's in motion simply standing in
 any of our environments, or fighting an Oni."*
 
-This is the **evolution** of the character — his final form. See
-`monk-shadow.md` for the earlier form; the arc runs shadow → light, colourless →
-bronze, and **blade → empty hands**.
+This is the **evolution** of the character — his final form.
 
-His empty hands are not an absence. They are the graduation: the student needs a
-weapon to show what he might be, and the master does not.
+His cloth sits at hue 28–34, **saturation 5–45** — bronze's hue family worn well
+below the brand's own 59. Compare `samurai.md`, whose cloth runs the same hue at
+saturation 63–79. **Mastery is turning it down.**
+
+His hands are empty, always. Not an absence — the student needs a weapon to show
+what he might be, and the master does not.
 
 ## Two findings that decide how he integrates
 

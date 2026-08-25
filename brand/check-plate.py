@@ -7,9 +7,12 @@ bounded is how much of the frame carries it, and how much GROUND remains.
 Also checks the feather: an image's edge value must resolve to the page ground
 of its mode, or the vignette reveals itself as a seam.
 
-Usage: check-plate.py [--day] <image> [<image> ...]
+Usage: check-plate.py [--day] [--figure] <image> [<image> ...]
   default   night mode — ground #0A0A0B, requires >=50% dark
   --day     day mode   — ground #F4F5F2, requires >=50% light
+  --figure  a Warrior portrait, not an environment. The subject legitimately
+            fills more of the frame, so the ground floor drops to 35%. Chroma
+            and edge checks are unchanged.
 
 A Warrior plate is checked in whichever mode it is destined for; the figure's
 own value ramp carries him on both, so the mode is a placement decision.
@@ -23,6 +26,7 @@ NIGHT_GROUND = (0x0A, 0x0A, 0x0B)
 DAY_GROUND   = (0xF4, 0xF5, 0xF2)
 MAX_CHROMA_COVERAGE = 25.0   # % of frame at sat>.35, val>.30
 MIN_GROUND          = 50.0   # % of frame at the mode's ground end of the ramp
+MIN_GROUND_FIGURE   = 35.0   # a portrait is not an environment
 MAX_EDGE_DELTA      = 12     # per-channel distance from GROUND at the corners
 
 
@@ -62,22 +66,25 @@ def measure(path, day=False):
 
 
 def main():
-    args = [a for a in sys.argv[1:] if a != "--day"]
+    args = [a for a in sys.argv[1:] if a not in ("--day", "--figure")]
     day = "--day" in sys.argv
+    figure = "--figure" in sys.argv
+    min_ground = MIN_GROUND_FIGURE if figure else MIN_GROUND
     if not args:
         sys.exit(__doc__)
     ground_rgb = DAY_GROUND if day else NIGHT_GROUND
     fail = False
     label = "light" if day else "dark"
-    print(f"mode: {'DAY' if day else 'NIGHT'}  ground {'#%02X%02X%02X' % ground_rgb}\n")
+    print(f"mode: {'DAY' if day else 'NIGHT'}{'  FIGURE' if figure else ''}  "
+          f"ground {'#%02X%02X%02X' % ground_rgb}  floor {min_ground:.0f}%\n")
     print(f"{'plate':26s} {'chroma':>8} {label:>7} {'peak':>6} {'edge':>9} {'d':>4}  verdict")
     for path in args:
         m = measure(path, day)
         notes = []
         if m["chroma"] > MAX_CHROMA_COVERAGE:
             notes.append(f"chroma coverage {m['chroma']:.0f}% > {MAX_CHROMA_COVERAGE:.0f}%")
-        if m["ground"] < MIN_GROUND:
-            notes.append(f"{label} ground {m['ground']:.0f}% < {MIN_GROUND:.0f}%")
+        if m["ground"] < min_ground:
+            notes.append(f"{label} ground {m['ground']:.0f}% < {min_ground:.0f}%")
         if m["delta"] > MAX_EDGE_DELTA:
             notes.append(f"edge seam — needs a vignette to reach {'#%02X%02X%02X' % ground_rgb}")
         verdict = "PASS" if not notes else "; ".join(notes)
