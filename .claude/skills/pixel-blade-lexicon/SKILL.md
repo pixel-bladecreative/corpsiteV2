@@ -48,12 +48,18 @@ plus the brand-native plate *are* the record.
 | `dark elegance` | The *treatment*. Near-black ground, one accent used once, hierarchy by tracking and opacity rather than weight, hairlines instead of boxes. Elegance as subtraction. |
 | `night scene` | The *photographic condition*. One warm source, hard warm/cool split, fast falloff, 70–85% of frame with no detail. |
 | `brooding` | The *emotional posture*. One figure turned away at 15–25% of frame, no horizon, no resolution, near-monochrome. Patient, not tragic. |
+| `dreamed garden` | The garden is **built, not found** — a stage or gallery, nature plinthed and printed on screens, landscape as flat stacked planes, light as furniture, mirror floor. Calm but impossible. |
 | `material` | A palette is a set of **materials**, not colors — base value, surface behavior, light response. graphite / bronze / petrol, one raking light, near-white hot edges. Supersedes the round-one palette. |
 
-**Layers.** `material` sets out three: **forge** (made — dimensional surfaces,
-the mark), **garden** (grown — photography and light), **livery** (said — flat
-type and hairlines). Bronze appears in all three, as brushed metal, reflected
-light, and flat ink respectively.
+**Layers.** Three: **forge** (made — dimensional surfaces, the mark),
+**garden** (**staged** — the constructed world, see `dreamed garden`), **livery**
+(said — flat type and hairlines). Bronze appears in all three, as brushed metal,
+as emitted light, and as flat ink.
+
+The garden was originally "grown" (photographic). `dreamed garden` changed it to
+staged, which is both truer to the brand — an agency builds a model of the
+buyer's world rather than showing you the world — and what lets the garden and
+the forge share one two-color engine.
 
 `dark elegance` / `night scene` / `brooding` describe treatment, photography and
 mood respectively. They usually co-occur but are separable — `auraplan`'s lit
