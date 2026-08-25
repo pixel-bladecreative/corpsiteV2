@@ -75,6 +75,25 @@
   --pb-koke:           #2F3332;  /* moss */
   --pb-ishi:           #6C5D53;  /* wet stone */
 
+  /* ---- LIT WORLD — IMAGE GAMUT ONLY. -------------------------------
+     Permitted INSIDE imagery. FORBIDDEN in type, tiles, buttons, rules,
+     borders, backgrounds, or any text section. See lexicon `lit world`.
+
+     The finding: this is not a foreign palette. Sampled across the
+     plates it lands at hue 12-20, directly adjacent to bronze at hue 29
+     — the same hue family, unleashed. The interface holds the family
+     restrained; the world runs it hot. That is why a saturated plate
+     does not read as a different brand.
+
+     Note also: sampling found no true pink or magenta. What reads as
+     "pink" is a DESATURATED CORAL (--pb-blush). Nothing above hue 340
+     survives; do not add one. ---------------------------------------- */
+  --pb-ember:  #F27656;  /* hue 12 — the hottest note. The bright world. */
+  --pb-coral:  #CD795C;  /* hue 15 — mid canopy */
+  --pb-blush:  #F3AF96;  /* hue 16, low sat — the high desaturated note */
+  --pb-rust:   #7B4933;  /* hue 18 — deep ridge */
+  --pb-oxide:  #5E321F;  /* hue 18 — deepest, nearly earth */
+
   /* ---- type (still a proposal) ------------------------------------ */
   --pb-display: 'Bodoni Moda', ui-serif, Georgia, serif;
   --pb-sans:    'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif;
@@ -100,3 +119,32 @@
    Everything in the forge is lit by ONE hard raking light, upper left,
    no fill. That is why the value ramps exist and why shadows crush clean.
    Two light sources anywhere in the system is a bug. */
+
+/* ============================================================
+   TWO GAMUTS, ONE BOUNDARY
+
+   INTERFACE GAMUT (the dark room)
+     sumi · graphite · petrol · bronze · washi
+     Narrow, disciplined, every pair contrast-verified above.
+
+   IMAGE GAMUT (the lit world)
+     everything above, PLUS ember / coral / blush / rust / oxide.
+
+   THE BOUNDARY IS THE IMAGE EDGE.
+   It is a hard edge, not a gradient. Enforce it:
+     - No full-bleed saturated image behind or beneath type.
+     - No glow, bloom, halo or colored spill crossing the frame.
+     - No colored ambient light on any interface surface.
+     - No saturated hue in a border, rule, tile, chip, button or label.
+   A reflection INSIDE the frame may carry color — a reflection is part
+   of the world. A shadow OUTSIDE it may not.
+
+   BRONZE IS THE ONLY COLOR THAT CROSSES.
+   It lives in both gamuts — restrained in the room, hot in the world.
+   That is what stitches the two together; nothing else is allowed to.
+
+   WHY THE DISCIPLINE BUYS SOMETHING
+   The interface is monastic so the images can be lush. Rationing the
+   saturated range by confining it is what gives it force. Spend it in
+   the room and it stops being an event.
+   ============================================================ */

@@ -70,9 +70,11 @@ garden converged without being forced to.
 
 **Borrow:** everything above.
 
-**Do not borrow the coral and red.** Three of the five references run coral
-screens, red maple, pink lotus. Bronze already occupies the warm role. Adding a
-second warm hue halves it — the same rule as `accent-word`.
+**The coral and red are permitted — inside imagery only.** An earlier version
+of this file cut them outright. Spencer overruled it with a better distinction:
+they belong to the **image gamut**, never the interface. See `lit world`, which
+is the governing rule. Inside a frame they are excitement and depth; in type,
+tiles or text sections they are a violation.
 
 **Do not borrow the white gallery** of the third reference. It is a light-ground
 space and this brand is dark by constraint. If a bright moment is ever wanted it
