@@ -50,6 +50,7 @@ plus the brand-native plate *are* the record.
 | `brooding` | The *emotional posture*. One figure turned away at 15–25% of frame, no horizon, no resolution, near-monochrome. Patient, not tragic. |
 | `dreamed garden` | The garden is **built, not found** — a stage or gallery, nature plinthed and printed on screens, landscape as flat stacked planes, light as furniture, mirror floor. Calm but impossible. |
 | `lit world` | **Two gamuts, one hard boundary at the image edge.** Saturated coral/ember/rust permitted INSIDE imagery, forbidden in type, tiles and text sections. Bronze is the only color that crosses. |
+| `tech` | Elegance + engineering + a dream of the future, **not cyber**. Ninety degrees, FLW/Ando cantilevers, drafting lines that overshoot and fade to nothing, diorama scale, honest mixed materials. Carries the **day mode**. |
 | `material` | A palette is a set of **materials**, not colors — base value, surface behavior, light response. graphite / bronze / petrol, one raking light, near-white hot edges. Supersedes the round-one palette. |
 
 **Layers.** Three: **forge** (made — dimensional surfaces, the mark),

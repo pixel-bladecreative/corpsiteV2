@@ -94,6 +94,37 @@
   --pb-rust:   #7B4933;  /* hue 18 — deep ridge */
   --pb-oxide:  #5E321F;  /* hue 18 — deepest, nearly earth */
 
+  /* ---- DAY MODE — the light ground -------------------------------
+     Not a new palette. The SAME materials on a paper ground, with the
+     roles held constant and the values swapped:
+
+       night              day
+       --pb-sumi      ->  --pb-day-paper     ground
+       --pb-washi     ->  --pb-day-ink       body copy
+       --pb-bronze    ->  --pb-day-accent    the accent
+
+     THE SWITCH MECHANISM: bronze is the one color that cannot cross.
+     It measures 2.05:1 on paper — the hard constraint found in round
+     one. On the light ground its role passes to OXIDE, which was
+     already in the lit-world gamut. Nothing new was invented to make
+     day mode work; it was already in the box. --------------------- */
+  --pb-day-paper:    #F4F5F2;  /* warm-neutral, a hair of green-grey.
+                                  Not pure white (clinical), not cream
+                                  (nostalgic). Sampled from the plates. */
+  --pb-day-ink:      #13252C;  /* 14.44:1 — petrol-deep. Body copy AND structure. */
+  --pb-day-ink-2:    #3F3937;  /* 10.36:1 — graphite. Secondary copy. */
+  --pb-day-ink-3:    #606457;  /*  5.55:1 — stone. Meta and labels. */
+  --pb-day-accent:   #5E321F;  /*  9.83:1 — oxide. The accent word, buttons. */
+  --pb-day-accent-2: #7B4933;  /*  6.75:1 — rust. Larger accent, hairlines. */
+  --pb-day-panel:    #13252C;  /* inverted panel; paper on it reads 14.44:1 */
+  --pb-day-hair:     rgba(19,37,44,.22);
+  --pb-day-hair-soft:rgba(19,37,44,.10);
+
+  /* Decorative only on paper — never text:
+       bronze #E59E5D 2.05:1 · wood tan #C8BBAA 1.72:1 · coral #CD795C 2.96:1
+     These are IMAGE colors on the light ground, same as the lit-world
+     rule inverted. */
+
   /* ---- type (still a proposal) ------------------------------------ */
   --pb-display: 'Bodoni Moda', ui-serif, Georgia, serif;
   --pb-sans:    'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif;

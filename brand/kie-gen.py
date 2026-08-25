@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-"""Generate brand assets via Kie.ai nano-banana-2.
+"""Generate brand assets via Kie.ai.
 
-Usage: kie-gen.py <slug> <aspect> <promptfile>
+Usage: kie-gen.py <slug> <aspect> <promptfile> [model]
+Models on this account: nano-banana-2 (fast), bytedance/seedream-v4-text-to-image,
+google/imagen4-ultra.
 Writes <slug>.png into brand/assets/ and records the CDN url alongside it.
 """
 import json, os, sys, time, urllib.request
@@ -31,10 +33,19 @@ def fetch(url, out):
 
 def main():
     slug, aspect, promptfile = sys.argv[1], sys.argv[2], sys.argv[3]
+    model = sys.argv[4] if len(sys.argv) > 4 else "nano-banana-2"
     prompt = open(promptfile).read().strip()
-    d = req(CREATE, {"model": "nano-banana-2",
-                     "input": {"prompt": prompt, "aspect_ratio": aspect,
-                               "resolution": "2K", "output_format": "png"}})
+    inp = {"prompt": prompt, "aspect_ratio": aspect, "output_format": "png"}
+    if model == "nano-banana-2":
+        inp["resolution"] = "2K"
+    elif "seedream" in model:
+        # seedream takes aspect via image_size, not aspect_ratio
+        inp.pop("aspect_ratio", None)
+        inp["image_size"] = {"3:4": "portrait_4_3", "4:3": "landscape_4_3",
+                             "16:9": "landscape_16_9", "9:16": "portrait_16_9",
+                             "1:1": "square"}.get(aspect, "portrait_4_3")
+        inp["image_resolution"] = "2K"
+    d = req(CREATE, {"model": model, "input": inp})
     if d.get("code") != 200:
         sys.exit(f"{slug}: createTask failed — {d.get('msg')}")
     tid = d["data"]["taskId"]
