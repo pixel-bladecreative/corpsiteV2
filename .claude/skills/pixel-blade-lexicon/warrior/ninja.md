@@ -1,9 +1,8 @@
-# Night warrior
+# Ninja
 
-Plates: `plates/night-blend.png` (day ground), `plates/night-dark.png`,
-`plates/night-myth.png` — feathered, verified with `check-plate.py --figure`.
-Reference: four images supplied 2026-08-25. Not stored on disk.
-Name still open — filed by role until one lands.
+Plates: `plates/ninja-blend.png` (day ground), `plates/ninja-dark.png`,
+`plates/ninja-myth.png` — feathered, verified with `check-plate.py --figure`.
+References: six images supplied 2026-08-25. Not stored on disk.
 
 Spencer: *"Shinji Aramaki style anime in texture, movement, execution. Warriors
 that might be myth. Until you get back to your hideout, and everyone's dead."*
@@ -62,18 +61,64 @@ unifying the technique would flatten three distinct figures into one.
 6. **Kindle channels.** Narrow cyan-turquoise light along plating, spine and
    knuckles. **Hairline only** — measured at 0.4–1.0% of frame coverage. Never a
    glow-suit.
-7. **The common thread — SUBTRACTIVE, not emissive.** Whole **regions** of him
-   are simply gone and replaced by churning wet black ink: half a torso, an
-   entire arm, the whole lower body. The boundary runs raggedly through him.
-
-   A first pass had smoke rising from a single point on his shoulder and Spencer
-   named it: *"too on the nose. Whole parts of him need to look like they are
-   dissolving into the shadows from which he works."* The failure mode is drawing
-   him whole and adding an effect. He is not emitting shadow — **he is missing**,
-   and shadow is what is there instead.
+7. **The common thread — see the section below.** This took three passes to get
+   right and it is the most important thing on this page.
 8. **Future Tokyo, desaturated.** Signage is dim and near-grey, never a neon
    blaze. No magenta, no hot pink, no orange neon. The city stays dark so he can
    be the only lit thing.
+
+## The effect — how the dissolution actually works
+
+Three passes, three failures, and the third correction is the one that names the
+mechanic.
+
+| Pass | What it did | Why it failed |
+|---|---|---|
+| 1 | Smoke rising from one point on his shoulder | *"Too on the nose."* An effect stuck onto a whole figure. |
+| 2 | Large ink masses replacing half his torso | Still emitting. The ink had **visible ends floating in air**. |
+| 3 | **Partially undrawn** | Correct. |
+
+Spencer's rule, and it is the whole thing:
+
+> *"We should never see the end of the inky sections. They should start in him,
+> then blend into a shadow, or the edge of a frame. He's **becoming** solid, or
+> **becoming** shadow. Not emitting something."*
+>
+> *"Don't think 'tendrils'. Think 'dissolving'. Think 'emerging'."*
+
+**Tendrils have ends. Dissolving has no far edge.**
+
+### How to actually produce it
+
+The instruction that works is not "dissolve him." It is: **the figure is only
+partially drawn.**
+
+1. **Compose the shadow first.** The frame must contain a large unbroken field of
+   near-black that runs off an edge — an alley mouth, a floor, a wall. Without
+   somewhere to dissolve *into*, the effect is impossible and the generator will
+   default to floating ink.
+2. **Name what is drawn.** "His left side from shoulder to hip, crisp and solid."
+3. **Name what is NOT drawn.** "His right side and both legs — **do not draw
+   them**. Where they would be, there is only the black field. No silhouette, no
+   outline, no contour, no hint of a limb."
+4. **Make the transition wide.** A third of the body, values stepping down, folds
+   and panel lines dropping out as they go. Never a hard line.
+5. **Ban the objects explicitly** — tendrils, wisps, plumes, smoke, splatter,
+   ribbons, tips, ends. Every single time.
+
+The black of the figure and the black of the field are **the same black**, one
+continuous area. There is no edge because there is no figure there to have one.
+
+### A trap worth knowing
+
+Asking for a *ragged* or *irregular* boundary reliably reintroduces wisps — the
+generator's default reading of "irregular dissolve" is tendrils. A test plate
+that got the torn diagonal boundary right smuggled floating smoke curls back into
+the transition zone.
+
+**Always pair any raggedness instruction with the explicit ban.** If forced to
+choose, take the cleaner boundary — no floating ends is the harder and more
+important rule.
 
 ## Adaptive colour — he is the day/night switch
 

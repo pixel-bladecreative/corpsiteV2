@@ -26,7 +26,7 @@ he never looks pasted into these environments.
 |---|---|
 | **Monk** — final form | `monk.md`. Three plates, both modes verified. Hue 28–34 at saturation 5–45. Hands empty. |
 | **Samurai** — the Day warrior | `samurai.md`. Four plates, day mode verified. Hue 24–29 at saturation 63–79. Always hatted, face always shadowed, carries a blade. |
-| **Night warrior** | `night.md`. Three plates, both modes verified. Aramaki anime, no hat, hooded, cybernetic, adaptive light/dark. Name still open. |
+| **Ninja** | `ninja.md`. Three plates, both modes verified. Aramaki anime, no hat, hooded, cybernetic, adaptive light/dark. |
 
 **No adversary.** The Oni is struck from this roster — no enemy is shown on the
 site. Revisit only when video assets are in play.
@@ -55,13 +55,27 @@ the second figure lands.
 1. **The figure is sharp. The motion is around him.** Never motion-blurred. The
    movement lives in ink ribbons, dissolving particles and streaming cloth. This
    is what lets a figure read as moving while standing still.
-2. **The dissolution is SUBTRACTIVE, not emissive.** Parts of a figure are
-   *missing* and shadow is what is there instead — never a whole figure with an
-   effect added on top. The failure mode is smoke rising from one point, which
-   reads as a special effect; the correct read is a region of the body that has
-   stopped existing. Scale varies by figure: the Monk loses hems and edges, the
-   Samurai everything below the ribs, the Night warrior half a torso or a whole
-   arm.
+2. **The dissolution has NO FAR EDGE. Ever.** This is the single most important
+   rule in the namespace and it took three passes to state correctly.
+
+   The ink must **start in the figure and run into an existing shadow or off the
+   frame**. It may never terminate in mid-air. **Tendrils have ends; dissolving
+   does not.** A figure is not emitting shadow — it is *becoming* shadow, or
+   *emerging* from it.
+
+   In practice the figure is **partially undrawn**: name what is drawn, name what
+   is not, and let a large unbroken field of near-black occupy the difference. The
+   figure's black and the field's black are the same black, so there is no edge
+   because there is no figure there to have one.
+
+   **Compose the shadow before the figure.** Without somewhere to dissolve into,
+   the effect cannot exist.
+
+   Scale varies — the Monk loses hems and edges, the Samurai everything below the
+   ribs, the Ninja an entire side — but the rule does not.
+
+   *Trap:* asking for a "ragged" boundary reliably reintroduces wisps. Always
+   pair it with an explicit ban on tendrils, tips and ends.
 3. **The face is at rest.** Eyes down or closed, no aggression, no strain, no
    shout. The violence is in the body. This is the warrior-in-a-garden idea
    compressed into one figure, and it is the rule most likely to be broken by a
