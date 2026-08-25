@@ -75,6 +75,13 @@ Spencer's references also carry reusable structure. That half lives in
 `numbered-grid`, `data-rows`, `dark-half-type`. Read it for any layout or
 component work, not just when a mood word is used.
 
+## Warrior — a separate element
+
+Figures live in `warrior/`, **not** in the terms above, and are **loaded only
+when a figure is actually needed** — never for ordinary design or layout work.
+Read `warrior/README.md` at that point. Currently: the Monk (final form). Pending:
+the Monk's earlier forms, and the Oni.
+
 ## Standing constraints
 
 Everything in this lexicon is subordinate to `brand/tokens.css` and the
