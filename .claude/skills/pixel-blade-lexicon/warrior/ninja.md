@@ -119,9 +119,31 @@ lines, a low sculpted brow, a flat lower jaw guard. Set into it either a few
 narrow glowing cyan line channels or **one small round glowing optic**, slightly
 off centre.
 
-Nothing hangs out of the hood. No strands, no fringe, nothing framing the mask —
-an earlier pass had cyan hair-like strands and they were cut. The head is a
-machined object, entirely covered.
+**The plating continues down the neck.** Below the jaw guard, an armoured gorget
+of overlapping segmented plates wraps the whole throat in the same faceted
+language, seam lines visible, running without interruption into the high collar.
+Mask and gorget read as **one continuous machined piece**.
+
+**No exposed skin above the collar — ever.** No jaw, no chin, no cheek, no ear,
+and above all no throat. There must be no patch of flesh tone between the mask
+and the collar. Hands may be bare; the neck may not.
+
+**No hair of any colour.** No strands, no fringe, no locks, no tassels, no cords
+or cables dangling at the throat. The helmet's outline meets the hood directly.
+
+### Two traps, both hit while fixing this
+
+1. **Cyan hair keeps coming back.** The generator adds teal strands at the
+   temples as a stylistic reflex, twice, after being told not to. Ban it by
+   colour as well as by noun — "no black hair, no white hair, **no cyan or teal
+   strands**, no tufts, nothing hanging beside or below the helmet."
+
+2. **Neck armour creeps into a mecha suit.** Asking for plating at the throat
+   produced a full armoured torso with a glowing chest orb, and the parka and
+   hood vanished. Always bound it: **"the armour is limited to the head and
+   throat only. Below the collar he is entirely cloth. No chest plate, no
+   armoured torso, no exosuit. He is a person in heavy streetwear wearing a
+   helmet, not a robot."**
 
 ### Produce it in code, not by generation
 
