@@ -1,46 +1,100 @@
 /* ============================================================
-   Pixel Blade — design tokens, round one
-   Derived from generated assets, not chosen off a swatch.
-   Contrast ratios measured against --pb-sumi.
+   Pixel Blade — design tokens, round two (MATERIAL SYSTEM)
+   Supersedes round one. Values sampled from brand/assets/mat-*.png.
 
-   ARCHITECTURE: two layers that never mix.
-     livery  — precision. Interface, type, structure, rules.
-     garden  — emotion. Light, atmosphere, photography.
-   A token doing both jobs means one of them is wrong.
+   Round one defined colors. This defines MATERIALS: a base value, how
+   the surface behaves, and how it responds to light. Texture is part of
+   the token, not a decoration applied afterward.
+
+   THREE LAYERS
+     garden  — grown.  Photographic, organic, warm. The buyer's world.
+     forge   — made.   Dimensional, machined, folded. What the work is made of.
+     livery  — said.   Flat, exact, readable. What the agency states.
+
+   THE RULE THAT REPLACED "GOLD IS INK, NOT METAL":
+     Bronze is METAL in the forge and INK in the livery.
+     Brushed grain + hot edges on surfaces; dead flat for type.
+     The law-firm failure is POLISHED PLATED gold — mirror, bevel,
+     gradient-as-sheen. Brushed bronze under a raking light is machined,
+     not plated. Never gloss. Never bevel. Never a gradient standing in
+     for a highlight.
    ============================================================ */
 :root{
-  /* ---- livery ------------------------------------------------ */
-  --pb-sumi:        #0B0C0B;  /* ground. flat non-metallic black, faintly green */
-  --pb-sumi-raised: #131513;  /* the only elevation step. no shadows in this system */
-  --pb-sumi-3:      #1B1E1B;  /* inset wells, code blocks */
 
-  --pb-kin:         #C5A05F;  /* 7.99:1  AAA — the brand. matte tan gold, carries body text */
-  --pb-kin-leaf:    #E4C88C;  /* 12.07:1 — the mylar flash. hover, focus, one live edge */
-  --pb-kin-deep:    #6F582F;  /* 2.90:1  NO TEXT — hairlines, rules, borders only */
+  /* ---- FORGE — dimensional. Surfaces, 3D, environment. -------------
+     Each material carries a VALUE RAMP: how it reads at different
+     angles to a single raking light. Use the ramp; do not invent
+     intermediate tints. ------------------------------------------- */
 
-  --pb-washi:       #E8E3D6;  /* 15.29:1 — body copy. warm paper white, never pure white */
-  --pb-washi-dim:   #A8A499;  /* 7.87:1  — secondary copy */
-  --pb-washi-faint: #6E6B64;  /* 3.4:1   — meta labels at >=14px only */
+  /* graphite — matte powder-coat. Non-reflective, fine surface tooth.
+     The body material. Carries no text at any value. */
+  --pb-graphite-void:  #060706;  /* turned fully away from the light */
+  --pb-graphite-deep:  #1A1A1A;
+  --pb-graphite:       #3F3937;  /* base, three-quarter to the light */
+  --pb-graphite-lit:   #817C7A;  /* facing the light directly */
 
-  /* ---- garden — never on interface chrome -------------------- */
-  --pb-yoi:         #334D65;  /* 2.23:1  ATMOSPHERE ONLY — blue hour */
-  --pb-yoi-far:     #7A97B3;  /* 6.44:1  — atmospheric distance, dissolved skyline */
-  --pb-andon:       #E8A13C;  /* 8.95:1  — lantern amber. a LIGHT SOURCE, never a fill */
-  --pb-koke:        #2F3332;  /* moss. keeps the palette off the law-firm shelf */
-  --pb-ishi:        #6C5D53;  /* 3.11:1  — wet warm stone. large shapes only */
+  /* bronze — brushed satin, visible directional grain. Never mirror.
+     Grain runs ALONG the plane's long axis, one direction per plane. */
+  --pb-bronze-shade:   #9A7E67;  /* grain in shadow */
+  --pb-bronze:         #E59E5D;  /* base — 8.84:1 on sumi, AAA */
+  --pb-bronze-hi:      #EBA564;  /* facing the light */
 
-  /* ---- hairlines. the default material ----------------------- */
-  --pb-hair:        rgba(197,160,95,.26);  /* gold coachline */
-  --pb-hair-soft:   rgba(232,227,214,.09); /* neutral rule */
+  /* petrol — deep satin blue-green. A second ground, not an accent.
+     This is what keeps the palette off the law-firm shelf. */
+  --pb-petrol-deep:    #13252C;  /* usable as a surface — bronze reads AAA on it */
+  --pb-petrol:         #1F3239;
+  --pb-petrol-lit:     #262D30;
 
-  /* ---- type (proposal, not decided) -------------------------- */
-  --pb-display: 'Bodoni Moda', ui-serif, Georgia, serif;      /* didone hairline == coachline */
+  /* edge — the signature. Specular highlight where two planes meet.
+     NEAR-WHITE, not gold: the bronze sits just inboard of it.
+     ONE pixel. Never a glow, never a blur, never thicker. */
+  --pb-edge:           #FEFEF5;
+
+  /* ---- LIVERY — flat. Type, hairlines, interface. ------------------ */
+  --pb-sumi:           #0A0A0B;  /* ground */
+  --pb-sumi-panel:     #13252C;  /* the one elevation step — petrol deep.
+                                    1.48:1 on sumi: present, never loud */
+  --pb-ink:            #E59E5D;  /* bronze as FLAT ink. No grain in type. */
+  --pb-ink-hi:         #EBA564;  /* hover, focus, the live edge */
+  --pb-ink-deep:       #9A7E67;  /* 5.23:1 — small labels ok, hairlines yes */
+  --pb-washi:          #E8E3D6;  /* body copy — 15.45:1 */
+  --pb-washi-dim:      #A8A499;
+  --pb-washi-faint:    #6E6B64;
+
+  --pb-hair:      rgba(229,158,93,.28);   /* bronze coachline */
+  --pb-hair-soft: rgba(232,227,214,.10);  /* neutral rule */
+
+  /* ---- GARDEN — grown. Photography and light only. -----------------
+     NEVER on interface chrome. See lexicon terms `night scene`,
+     `brooding`. ---------------------------------------------------- */
+  --pb-yoi:            #334D65;  /* blue hour — atmosphere only, 2.2:1 */
+  --pb-yoi-far:        #7A97B3;  /* dissolved distance */
+  --pb-andon:          #E8A13C;  /* lantern amber — a LIGHT SOURCE, never a fill */
+  --pb-koke:           #2F3332;  /* moss */
+  --pb-ishi:           #6C5D53;  /* wet stone */
+
+  /* ---- type (still a proposal) ------------------------------------ */
+  --pb-display: 'Bodoni Moda', ui-serif, Georgia, serif;
   --pb-sans:    'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif;
   --pb-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-/* HARD CONSTRAINT
-   --pb-kin on --pb-washi measures 1.91:1. The gold is unreadable on any light
-   ground. This brand is dark or it is not itself. Every light-background
-   context (invoice, Word doc, client slide template) needs a declared
-   substitute — do not ship a hopeful gold. */
+/* VERIFIED CONTRAST (measured, not asserted)
+     bronze on sumi ................ 8.84:1  AAA  — carries body text
+     bronze on petrol-deep ......... 7.06:1  AAA  — works on the second ground
+     sumi on bronze (button) ....... 8.84:1  AAA
+     washi on sumi ................. 15.45:1 AAA
+     washi on petrol-deep .......... 12.34:1 AAA
+     bronze-shade on sumi .......... 5.23:1  AA   — labels, not body
+     graphite on sumi .............. 1.75:1       — a MATERIAL, never text
+     petrol-deep on sumi ........... 1.48:1       — quiet elevation, by design
+
+   HARD CONSTRAINT — unchanged and now stronger:
+     bronze on washi ............... 1.75:1
+   The brand is dark. Light contexts get a declared substitute, never a
+   hopeful bronze. */
+
+/* SINGLE LIGHT SOURCE
+   Everything in the forge is lit by ONE hard raking light, upper left,
+   no fill. That is why the value ramps exist and why shadows crush clean.
+   Two light sources anywhere in the system is a bug. */

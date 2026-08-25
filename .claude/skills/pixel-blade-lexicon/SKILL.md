@@ -48,6 +48,12 @@ plus the brand-native plate *are* the record.
 | `dark elegance` | The *treatment*. Near-black ground, one accent used once, hierarchy by tracking and opacity rather than weight, hairlines instead of boxes. Elegance as subtraction. |
 | `night scene` | The *photographic condition*. One warm source, hard warm/cool split, fast falloff, 70–85% of frame with no detail. |
 | `brooding` | The *emotional posture*. One figure turned away at 15–25% of frame, no horizon, no resolution, near-monochrome. Patient, not tragic. |
+| `material` | A palette is a set of **materials**, not colors — base value, surface behavior, light response. graphite / bronze / petrol, one raking light, near-white hot edges. Supersedes the round-one palette. |
+
+**Layers.** `material` sets out three: **forge** (made — dimensional surfaces,
+the mark), **garden** (grown — photography and light), **livery** (said — flat
+type and hairlines). Bronze appears in all three, as brushed metal, reflected
+light, and flat ink respectively.
 
 `dark elegance` / `night scene` / `brooding` describe treatment, photography and
 mood respectively. They usually co-occur but are separable — `auraplan`'s lit

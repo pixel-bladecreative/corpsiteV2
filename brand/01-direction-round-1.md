@@ -1,3 +1,10 @@
+> **SUPERSEDED (round two, 2026-08-25).** The palette section below is
+> replaced by the material system in `tokens.css` and
+> `board/materials.html`. Colors became materials; flat gold became
+> brushed bronze; petrol teal was added as a second ground. The
+> livery-over-garden thesis survives and gains a third layer (forge).
+> Everything else here still stands.
+
 # Round one — direction
 
 Board: https://claude.ai/code/artifact/45f9c3e5-d4a7-4e96-b8be-9ddcada20cb0
