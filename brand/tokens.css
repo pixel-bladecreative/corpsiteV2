@@ -130,14 +130,36 @@
    IMAGE GAMUT (the lit world)
      everything above, PLUS ember / coral / blush / rust / oxide.
 
-   THE BOUNDARY IS THE IMAGE EDGE.
-   It is a hard edge, not a gradient. Enforce it:
-     - No full-bleed saturated image behind or beneath type.
-     - No glow, bloom, halo or colored spill crossing the frame.
-     - No colored ambient light on any interface surface.
+   THE BOUNDARY IS A FALLOFF, NOT A LINE.
+   Images feather and vignette out; their own darkness is the boundary.
+   The image EMERGES FROM the dark rather than being cut into it — no
+   visible seam between the world and the moonlit candle night of the
+   room. A hard rectangle would read as a pasted-in photograph.
+
+   Containment still holds, and is stronger this way: the color dies to
+   nothing BEFORE it reaches any interface element.
      - No saturated hue in a border, rule, tile, chip, button or label.
-   A reflection INSIDE the frame may carry color — a reflection is part
-   of the world. A shadow OUTSIDE it may not.
+     - No colored ambient light on any interface surface.
+     - No type sitting on any part of an image still carrying chroma.
+   A reflection INSIDE the image may carry color — a reflection is part
+   of the world.
+
+   TECHNICAL REQUIREMENT — the feather has to land.
+   An image's edge value must resolve to --pb-sumi (#0A0A0B). If a plate
+   crops lit content at its border, the vignette is mandatory, not
+   optional. Verify with brand/check-plate.py; a corner delta over 12
+   per channel will show as a seam.
+
+   THE CEILING IS COVERAGE, NOT CHROMA.
+   Peak saturation is unbounded — the ceiling reference runs to 89% sat.
+   What is bounded is how much of the frame carries it:
+     saturated coverage  <= ~25% of frame   (sat>.35, val>.30)
+     dark ground         >= ~50% of frame   (val<.18)
+   The ceiling reference measures 21% coverage against 51% dark ground.
+   It reads as maximal because it is JEWELLED — intense chroma in small
+   discrete objects separated by void — not because it is bright.
+   A large continuous saturated field breaks the rule at far lower
+   saturation than a field of small brilliant ones.
 
    BRONZE IS THE ONLY COLOR THAT CROSSES.
    It lives in both gamuts — restrained in the room, hot in the world.
