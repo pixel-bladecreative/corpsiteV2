@@ -113,7 +113,7 @@ MARKS = {
 
 for name, s in MARKS.items():
     open(f"{OUT}/{name}.svg", "w").write(s)
-    for px, tag in ((800, ""), (64, "-64"), (16, "-16")):
+    for px, tag in ((800, ""), (64, "-64"), (32, "-32"), (16, "-16")):
         cairosvg.svg2png(bytestring=s.encode(), write_to=f"{OUT}/{name}{tag}.png",
                          output_width=px, output_height=px,
                          background_color="#0A0A0B")
