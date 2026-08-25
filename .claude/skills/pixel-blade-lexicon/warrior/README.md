@@ -26,7 +26,10 @@ he never looks pasted into these environments.
 |---|---|
 | **Monk** — final form | `monk.md`. Three plates, both modes verified. Hue 28–34 at saturation 5–45. Hands empty. |
 | **Samurai** — the Day warrior | `samurai.md`. Four plates, day mode verified. Hue 24–29 at saturation 63–79. Always hatted, face always shadowed, carries a blade. |
-| **Oni** — adversary | Pending. Named as an opponent the Monk fights. |
+| **Night warrior** | `night.md`. Three plates, both modes verified. Aramaki anime, no hat, hooded, cybernetic, adaptive light/dark. Name still open. |
+
+**No adversary.** The Oni is struck from this roster — no enemy is shown on the
+site. Revisit only when video assets are in play.
 
 **Saturation is the axis.** Both figures sit in the same hue family — 24–34,
 which is bronze's family — and differ only in volume:
@@ -70,12 +73,19 @@ the second figure lands.
 7. **A figure's SATURATION states where it is.** Every figure sits in bronze's
    hue family; how loudly they wear it is the characterisation. A new figure's
    saturation should be a deliberate answer to "how far along is this one."
-8. **Where a figure is solid, it is a photograph.** Total material fidelity —
-   real weave, real fraying, real skin. Any stylisation is confined to what is
-   dissolving. If everything is stylised, nothing reads as lost.
-9. **`--pb-kindle` #2AD4C8 belongs to blades only.** The one colour in the system
-   that means potential rather than material. Never on a figure, never in type,
-   never anywhere but behind a weapon.
+8. **Where a figure is solid, it is fully committed** — in whatever mode that
+   figure is drawn. Photoreal cloth for the Monk and Samurai; crisp cel-shaded
+   anime for the Night warrior. Any looseness is confined to what is dissolving.
+   If everything is loose, nothing reads as lost.
+
+   **The rendering mode differs per figure ON PURPOSE. The ink dissolution is
+   the only constant, and it is what makes them one cast.** Do not unify the
+   technique — that would flatten three distinct figures into one.
+9. **`--pb-kindle` #2AD4C8 marks what is not proven yet.** Amended from
+   "blades only" once the Night warrior's light measured the same colour. The
+   Samurai's blade is ability unearned; the Night warrior's channels are an
+   unconfirmed myth. The Monk, who has arrived, carries none. Hairline only —
+   0.4–1.0% of frame — and never in type.
 
 ## Adding a figure
 
