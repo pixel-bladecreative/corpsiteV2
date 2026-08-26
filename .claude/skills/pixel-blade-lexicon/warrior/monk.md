@@ -82,6 +82,26 @@ figure has failed — the layering is the character.
    **petrol teal and bronze/rust** — this is the only place brand saturation
    touches a figure.
 
+## The kasa — permitted at mark scale
+
+Spencer, 2026-08-26: **the hat stays in this application.**
+
+The Monk has no hat in his environment plates and does not get one there — the
+broad hat remains the Samurai's, who is *always* hatted. But inside the mark his
+wardrobe, his hue family and his empty hands are all invisible. At a tenth of
+frame height the silhouette is the entire figure, and a broad flat conical kasa
+is the only element that survives the reduction and still reads as a seated
+person rather than a smudge.
+
+**The rule.** The kasa is permitted when the Monk appears inside a mark or a
+made object at roughly a tenth of frame height or smaller. It is forbidden in
+environment plates and in portraits, where the layered wardrobe does the work
+and a hat would flatten him toward the student.
+
+This is a legibility exception and nothing in the mythos follows from it. The
+Samurai's hat still means what it meant; the Monk has not acquired one. If a
+future session finds this hat in a full-size plate, that is a bug.
+
 ## Borrow / don't borrow
 
 **Borrow:** all of the above.
