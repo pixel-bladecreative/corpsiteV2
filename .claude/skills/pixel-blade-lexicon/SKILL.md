@@ -51,12 +51,17 @@ plus the brand-native plate *are* the record.
 | `dreamed garden` | The garden is **built, not found** — a stage or gallery, nature plinthed and printed on screens, landscape as flat stacked planes, light as furniture, mirror floor. Calm but impossible. |
 | `lit world` | **Two gamuts, one hard boundary at the image edge.** Saturated coral/ember/rust permitted INSIDE imagery, forbidden in type, tiles and text sections. Bronze is the only color that crosses. |
 | `tech` | Elegance + engineering + a dream of the future, **not cyber**. Ninety degrees, FLW/Ando cantilevers, drafting lines that overshoot and fade to nothing, diorama scale, honest mixed materials. Carries the **day mode**. |
+| `struck` | **A mark is not artwork, it is a die.** It gets pressed into something — foil on construction paper, relief on a bronze blank, a blind deboss, stacked cut sheets, a hole in the page with a world behind it. Depth from light and stacking, never from a gradient fill. |
 | `material` | A palette is a set of **materials**, not colors — base value, surface behavior, light response. graphite / bronze / petrol, one raking light, near-white hot edges. Supersedes the round-one palette. |
 
-**Layers.** Three: **forge** (made — dimensional surfaces, the mark),
+**Layers.** Three: **forge** (made — dimensional surfaces, **and the mark**, see
+`struck`),
 **garden** (**staged** — the constructed world, see `dreamed garden`), **livery**
 (said — flat type and hairlines). Bronze appears in all three, as brushed metal,
 as emitted light, and as flat ink.
+
+The mark was originally built in the livery layer, flat and one-colour. `struck`
+moved it to the forge, where the rest of the brand already lived.
 
 The garden was originally "grown" (photographic). `dreamed garden` changed it to
 staged, which is both truer to the brand — an agency builds a model of the
