@@ -333,7 +333,10 @@ def layer_svgs(path):
         v = body
         for j, m in reversed(list(enumerate(hits))):
             if j != i:
-                v = v[:m.start()] + m.group().replace("/>", ' opacity="0"/>') + v[m.end():]
+                # strip any opacity the element already carries, or setting our
+                # own produces a duplicate attribute and the parse fails
+                g = re.sub(r'\sopacity="[^"]*"', "", m.group())
+                v = v[:m.start()] + g.replace("/>", ' opacity="0"/>') + v[m.end():]
         for mk in masks:
             v = v.replace("@@MASK@@", mk, 1)
         v = re.sub(r'(stroke|fill)="#[0-9A-Fa-f]{6}"', r'\1="#FFFFFF"', v)
