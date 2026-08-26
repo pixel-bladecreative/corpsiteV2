@@ -39,29 +39,41 @@ source image should be kept verbatim, Spencer puts it in Drive or commits it to
 `brand/refs/`, and the ref file records the path. Otherwise the written analysis
 plus the brand-native plate *are* the record.
 
+## Status — what is accepted
+
+Spencer confirmed the accepted core on 2026-08-26: **The Dreamed Garden, Daylight
+Mode, and the three Warriors**, on the foundation of `brand/tokens.css`. The
+manifest is `brand/system/SYSTEM.md`; the combined book is
+`brand/system/design-system.html`.
+
+Terms below marked ✓ are load-bearing for that accepted core. The rest remain
+useful vocabulary — they resolve Spencer's shorthand correctly — but nothing
+built on them alone carries system approval. **`struck` in particular describes a
+method whose only application so far was a rejected mark.**
+
 ## Index
 
-| Term | One line |
-|---|---|
-| `surreal` | Familiar objects of intimate scale, rendered monumentally, suspended in void with no explanation of support. Not fantasy — dislocation. |
-| `scale` | A tiny human figure as the ruler that proves everything else is impossible. 1–3% of frame height, never more. |
-| `dark elegance` | The *treatment*. Near-black ground, one accent used once, hierarchy by tracking and opacity rather than weight, hairlines instead of boxes. Elegance as subtraction. |
-| `night scene` | The *photographic condition*. One warm source, hard warm/cool split, fast falloff, 70–85% of frame with no detail. |
-| `brooding` | The *emotional posture*. One figure turned away at 15–25% of frame, no horizon, no resolution, near-monochrome. Patient, not tragic. |
-| `dreamed garden` | The garden is **built, not found** — a stage or gallery, nature plinthed and printed on screens, landscape as flat stacked planes, light as furniture, mirror floor. Calm but impossible. |
-| `lit world` | **Two gamuts, one hard boundary at the image edge.** Saturated coral/ember/rust permitted INSIDE imagery, forbidden in type, tiles and text sections. Bronze is the only color that crosses. |
-| `tech` | Elegance + engineering + a dream of the future, **not cyber**. Ninety degrees, FLW/Ando cantilevers, drafting lines that overshoot and fade to nothing, diorama scale, honest mixed materials. Carries the **day mode**. |
-| `struck` | **A mark is not artwork, it is a die.** It gets pressed into something — foil on construction paper, relief on a bronze blank, a blind deboss, stacked cut sheets, a hole in the page with a world behind it. Depth from light and stacking, never from a gradient fill. |
-| `material` | A palette is a set of **materials**, not colors — base value, surface behavior, light response. graphite / bronze / petrol, one raking light, near-white hot edges. Supersedes the round-one palette. |
+| | Term | One line |
+|---|---|---|
+| | `surreal` | Familiar objects of intimate scale, rendered monumentally, suspended in void with no explanation of support. Not fantasy — dislocation. |
+| | `scale` | A tiny human figure as the ruler that proves everything else is impossible. 1–3% of frame height, never more. |
+| | `dark elegance` | The *treatment*. Near-black ground, one accent used once, hierarchy by tracking and opacity rather than weight, hairlines instead of boxes. Elegance as subtraction. |
+| | `night scene` | The *photographic condition*. One warm source, hard warm/cool split, fast falloff, 70–85% of frame with no detail. |
+| | `brooding` | The *emotional posture*. One figure turned away at 15–25% of frame, no horizon, no resolution, near-monochrome. Patient, not tragic. |
+| ✓ | `dreamed garden` | The garden is **built, not found** — a stage or gallery, nature plinthed and printed on screens, landscape as flat stacked planes, light as furniture, mirror floor. Calm but impossible. |
+| ✓ | `lit world` | **Two gamuts, one hard boundary at the image edge.** Saturated coral/ember/rust permitted INSIDE imagery, forbidden in type, tiles and text sections. Bronze is the only color that crosses. |
+| ✓ | `tech` | Elegance + engineering + a dream of the future, **not cyber**. Ninety degrees, FLW/Ando cantilevers, drafting lines that overshoot and fade to nothing, diorama scale, honest mixed materials. Carries the **day mode**. |
+| | `struck` | **A mark is not artwork, it is a die.** It gets pressed into something — foil on construction paper, relief on a bronze blank, a blind deboss, stacked cut sheets, a hole in the page with a world behind it. Depth from light and stacking, never from a gradient fill. |
+| ✓ | `material` | A palette is a set of **materials**, not colors — base value, surface behavior, light response. graphite / bronze / petrol, one raking light, near-white hot edges. Supersedes the round-one palette. |
 
-**Layers.** Three: **forge** (made — dimensional surfaces, **and the mark**, see
-`struck`),
+**Layers.** Three: **forge** (made — dimensional surfaces; the mark would belong
+here too, but no mark is approved — see `struck`),
 **garden** (**staged** — the constructed world, see `dreamed garden`), **livery**
 (said — flat type and hairlines). Bronze appears in all three, as brushed metal,
 as emitted light, and as flat ink.
 
-The mark was originally built in the livery layer, flat and one-colour. `struck`
-moved it to the forge, where the rest of the brand already lived.
+`struck` argued the mark belongs in the forge rather than the livery. That
+argument still stands; the marks it was argued with do not. No mark is approved.
 
 The garden was originally "grown" (photographic). `dreamed garden` changed it to
 staged, which is both truer to the brand — an agency builds a model of the

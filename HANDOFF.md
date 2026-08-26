@@ -122,19 +122,25 @@ in `check-plate.py` were found by new image kinds rather than by inspection.
 
 ## 5 · Boards
 
-| Board | Link |
-|---|---|
-| Livery Over Garden — round one | https://claude.ai/code/artifact/45f9c3e5-d4a7-4e96-b8be-9ddcada20cb0 |
-| Dark Elegance Hero | https://claude.ai/code/artifact/9ef045f1-e169-420c-989b-c7c5254da3de |
-| Forge Garden Livery — materials | https://claude.ai/code/artifact/ef2ec1fb-453e-4e59-94da-2242bd1f7eda |
-| The Dreamed Garden — lit world, the ceiling | https://claude.ai/code/artifact/46cd9cc9-d350-4a4c-a60f-847e298160c8 |
-| Daylight Mode — `tech`, day/night switch | https://claude.ai/code/artifact/5adc3660-9ccf-4a91-9aef-1fad06a2aa80 |
-| The Monk | https://claude.ai/code/artifact/47004346-cafc-4379-9bbf-acb41fcd6075 |
-| The Samurai | https://claude.ai/code/artifact/313ab567-ddb3-4fb5-b916-6b7bcc34c994 |
-| The Ninja | https://claude.ai/code/artifact/59c9e511-1170-47fc-9898-21d2b44f74d2 |
-| The Cut Circle — mark, rounds 2–4 *(rejected)* | https://claude.ai/code/artifact/50710d23-310f-44cf-88f1-a3e5d82e2407 |
-| Struck — the material argument | https://claude.ai/code/artifact/5b5fe414-b926-42ee-b0ae-dbff880fed9e |
-| The Kerf — fresh start *(rejected)* | https://claude.ai/code/artifact/3850e4b2-fb34-4668-b488-0f5073a30504 |
+**The system is five of these.** `brand/system/SYSTEM.md` is the manifest and
+`brand/system/design-system.html` is the combined book:
+https://claude.ai/code/artifact/7b3a9ec8-6548-4ccf-a503-4f64c7b97919
+
+
+| Board | Status | Link |
+|---|---|---|
+| **Pixel Blade Design System — the book** | **canonical** | https://claude.ai/code/artifact/7b3a9ec8-6548-4ccf-a503-4f64c7b97919 |
+| Livery Over Garden — round one | superseded | https://claude.ai/code/artifact/45f9c3e5-d4a7-4e96-b8be-9ddcada20cb0 |
+| Dark Elegance Hero | superseded | https://claude.ai/code/artifact/9ef045f1-e169-420c-989b-c7c5254da3de |
+| Forge Garden Livery — materials | superseded | https://claude.ai/code/artifact/ef2ec1fb-453e-4e59-94da-2242bd1f7eda |
+| The Dreamed Garden — lit world, the ceiling | **IN THE SYSTEM** | https://claude.ai/code/artifact/46cd9cc9-d350-4a4c-a60f-847e298160c8 |
+| Daylight Mode — `tech`, day/night switch | **IN THE SYSTEM** | https://claude.ai/code/artifact/5adc3660-9ccf-4a91-9aef-1fad06a2aa80 |
+| The Monk | **IN THE SYSTEM** | https://claude.ai/code/artifact/47004346-cafc-4379-9bbf-acb41fcd6075 |
+| The Samurai | **IN THE SYSTEM** | https://claude.ai/code/artifact/313ab567-ddb3-4fb5-b916-6b7bcc34c994 |
+| The Ninja | **IN THE SYSTEM** | https://claude.ai/code/artifact/59c9e511-1170-47fc-9898-21d2b44f74d2 |
+| The Cut Circle — mark, rounds 2–4 *(rejected)* | rejected | https://claude.ai/code/artifact/50710d23-310f-44cf-88f1-a3e5d82e2407 |
+| Struck — the material argument | archive | https://claude.ai/code/artifact/5b5fe414-b926-42ee-b0ae-dbff880fed9e |
+| The Kerf — fresh start *(rejected)* | rejected | https://claude.ai/code/artifact/3850e4b2-fb34-4668-b488-0f5073a30504 |
 
 To update one, pass its URL as `url` — publishing without it makes a second artifact.
 
